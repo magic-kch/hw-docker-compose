@@ -7,11 +7,12 @@ WORKDIR /stocks_products_app
 
 COPY requirements.txt requirements.txt
 
+
 RUN pip install -r requirements.txt
-RUN mv _env .env
 
 EXPOSE 8000
 
 COPY . .
+COPY _env .env
 
 RUN chmod +x backendStartup.sh
