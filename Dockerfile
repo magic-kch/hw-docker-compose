@@ -6,11 +6,12 @@ ENV PYTHONUNBUFFERED=1
 WORKDIR /stocks_products_app
 
 COPY requirements.txt requirements.txt
+
 RUN pip install -r requirements.txt
+RUN mv _env .env
 
 EXPOSE 8000
 
 COPY . .
-
 
 RUN chmod +x backendStartup.sh
